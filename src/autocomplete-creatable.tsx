@@ -32,7 +32,7 @@ export function AutoCompleteCreatable(props: AutoCompleteCreatableProps) {
     true
   ).item;
 
-  const queryExistsInList = filteredResults.some(i => i.value.id === query.id);
+  const queryExistsInList = filteredResults.some(i => i.label.toLowerCase() === query.toLowerCase());
   const showWhenEmpty = isEmpty(query) ? alwaysDisplay : true;
   const showCreatable =
     autoCompleteProps.creatable && showWhenEmpty && !queryExistsInList;
